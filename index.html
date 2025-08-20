@@ -5426,6 +5426,36 @@
     padding: 8px; /* Menambahkan padding untuk input */
     box-sizing: border-box; /* Memastikan padding tidak menambah lebar total */
 }
+@media (max-width: 768px) {
+    .sidebar-nav {
+        display: none;
+    }
+    .main-layout {
+        flex-direction: column;
+    }
+    .product-selection-area {
+        height: auto;
+    }
+    .cart-summary-area {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: var(--card-bg);
+        box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+        padding: 15px;
+    }
+    .checkout-btn {
+        width: 100%;
+        position: fixed;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 95%;
+        z-index: 101;
+    }
+}
 
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -6253,7 +6283,7 @@
         // const strukNomorMeja = currentTransaction.nomorMeja;
         const totalHarga = currentTransaction.totalHarga.toLocaleString('id-ID');
         const bayarTunai = currentTransaction.tunai.toLocaleString('id-ID');
-        const bayarTransfer = currentTransaction.tunai.toLocaleString('id-ID');
+        const bayarTransfer = currentTransaction.transfer.toLocaleString('id-ID');
         const kembalian = currentTransaction.kembalian.toLocaleString('id-ID');
 
         let textStruk = `
